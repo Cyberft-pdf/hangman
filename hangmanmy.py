@@ -5,22 +5,22 @@ import string
 
 print("-------------------------------------------------------------")
 print(" ")
-print("Ahoj, vítej ve hře šibenice")
+print("Hello, welcome to hangman game")
 print(" ")
 print("-------------------------------------------------------------")
 time.sleep(3)
 print(" ")
-print("Já ti napíšu čárky. Každá čárka reprezentuje pímenko")
+print("I'll write you commas. Each line represents a letter")
 print(" ")
 print("-------------------------------------------------------------")
 
 time.sleep(6)
 print(" ")
-odpoved = input("Si připraven/a ano/ne:")
+odpoved = input("Are you ready yes/no:")
 print(" ")
 print("-------------------------------------------------------------")
 
-if odpoved == "ano":
+if odpoved == "yes":
     def get_valid_word(words):
         word = random.choice(words)
         while "-" in word or " " in word:
