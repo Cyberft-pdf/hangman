@@ -37,13 +37,13 @@ if odpoved == "yes":
 
         lives = 6
         while len(word_letters) > 0 and lives > 0:
-            print("Zbýváti",lives, "životů už si použil tyhle slova: ", " ". join(used_letters))
+            print("Remain :",lives, "lives you already used these letters: ", " ". join(used_letters))
             print(" ")
             word_list= [letter if letter in used_letters else "-" for letter in word] 
-            print("Slovo které máte ted: "," ".join(word_list))
+            print("The word you have now: "," ".join(word_list))
             print(" ")
 
-            user_letter = input("Typlni si písmeno:").upper()
+            user_letter = input("Guess the letter:").upper()
             print(" ")
             if user_letter in alphabet - used_letters:
                 used_letters.add(user_letter)
@@ -51,29 +51,29 @@ if odpoved == "yes":
                     word_letters.remove(user_letter)
                 else:
                     lives = lives - 1 
-                    print("Písmenko není ve slově.")
+                    print("The letter is not in the word.")
                     print(" ")
 
             elif user_letter in used_letters:
-                print("Tohle písmeno sí uz použil. Pouzí jiný")
+                print("You have already used this letter. Use another one")
                 print(" ")
 
             else:
-                print("Neplatný charakter. Pouzí jiný")
+                print("Invalid character. Use another")
                 print(" ")
         if lives == 0:
-            print("Promin, prohrál si:(", word)
+            print("Sorry, you lost :(", word)
         else:
-            print("Uhodl si správné slovo", word, ":)")
+            print("You guessed the right word", word, ":)")
 
     hangman()       
 else:
-    print("ano nebo ne >:(")
+    print("yes or no >:(")
 
 
 
 if odpoved == "ne":
-    print("tak to je mi líto:(")
+    print("so sorry :(")
 
 
         
